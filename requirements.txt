@@ -1,0 +1,7 @@
+requests==2.31.0
+beautifulsoup4==4.12.3
+pandas==2.2.2
+scikit-learn==1.5.0
+matplotlib==3.9.0
+keybert==0.8.4
+spacy==3.7.5
