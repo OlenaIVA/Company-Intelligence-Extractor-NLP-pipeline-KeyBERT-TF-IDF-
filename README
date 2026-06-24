@@ -1,0 +1,182 @@
+# Company Intelligence Extractor
+
+## Overview
+
+Company Intelligence Extractor is an end-to-end NLP and Machine Learning pipeline that analyses company websites and predicts their business sector.
+
+The project automatically:
+
+* Scrapes company homepages
+* Extracts and cleans website text
+* Identifies keywords using KeyBERT
+* Extracts named entities using spaCy
+* Classifies companies into sectors using TF-IDF and Logistic Regression
+* Evaluates model performance using Cross Validation and Holdout Testing
+
+---
+
+## Project Workflow
+
+Company Website URL
+
+↓
+
+HTML Scraping
+
+↓
+
+Content Cleaning
+
+↓
+
+Keyword Extraction (KeyBERT)
+
+↓
+
+Named Entity Recognition (spaCy)
+
+↓
+
+TF-IDF Feature Engineering
+
+↓
+
+Logistic Regression Classification
+
+↓
+
+Sector Prediction
+
+---
+
+## Features
+
+### Web Scraping
+
+* Downloads company homepage content
+* Uses file-based caching to reduce repeated requests
+* Handles network errors gracefully
+* Implements polite scraping with configurable delays
+
+### Text Processing
+
+* Removes HTML noise such as:
+
+  * Navigation menus
+  * Headers and footers
+  * Cookie banners
+  * GDPR popups
+* Normalises extracted text
+* Filters low-quality pages
+
+### Keyword Extraction
+
+Primary method:
+
+* KeyBERT
+
+Fallback method:
+
+* TF-IDF keyword extraction
+
+### Named Entity Recognition
+
+Extracts:
+
+* Organisations (ORG)
+* Products (PRODUCT)
+* Countries and cities (GPE)
+* Locations (LOC)
+
+### Sector Classification
+
+Model Pipeline:
+
+* TF-IDF Vectorizer
+* Logistic Regression
+
+Techniques used:
+
+* N-grams (1–2)
+* Vocabulary control
+* L2 regularisation
+* Class balancing
+
+---
+
+## Evaluation
+
+The project evaluates performance using:
+
+### Stratified Cross Validation
+
+Provides:
+
+* Mean Accuracy
+* Standard Deviation
+* Fold Scores
+
+### Holdout Test Set
+
+Provides:
+
+* Precision
+* Recall
+* F1-score
+* Classification Report
+
+### Confusion Matrix
+
+Used for error analysis and model diagnostics.
+
+---
+
+## Project Structure
+
+company-intelligence-extractor/
+
+├── data/
+
+├── models/
+
+├── outputs/
+
+├── src/
+
+├── requirements.txt
+
+├── README.md
+
+└── .gitignore
+
+---
+
+## Technologies
+
+* Python
+* Pandas
+* Scikit-learn
+* KeyBERT
+* spaCy
+* BeautifulSoup
+* Requests
+* Joblib
+* Matplotlib
+
+---
+
+## Future Improvements
+
+* Larger labelled dataset
+* Additional company sectors
+* Transformer-based sector classifier
+* Streamlit dashboard
+* Automated retraining pipeline
+
+---
+
+## Author
+
+Olena Ivanchenko
+
+Aspiring Data Scientist with interests in NLP, Machine Learning and Business Intelligence.
